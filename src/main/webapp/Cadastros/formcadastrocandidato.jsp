@@ -47,6 +47,8 @@
 			Número:<br> <input class="form-control" type="text" name="numero" placeholder="30" required><br>
 			<input type="hidden" value="${cargo.id_Eleicao}" name="idEleicao"/>
 			<input type="hidden" value="${cargo.id_Cargo}" name="idCargo"><br> 
+			<input type="hidden" value="<%out.print(request.getParameter("idEleicao"));%>" name="idEleicao2"/>
+			<input type="hidden" value="<%out.print(request.getParameter("idCargo"));%>" name="idCargo2"><br>
 			<button class="btn btn-lg btn-secondary" type="submit" value="0" name="cadastro">Cadastrar Candidato</button>
 			<button class="btn btn-lg btn-secondary" type="submit" value="1" name="cadastro">Cadastrar mais Candidatos</button>
 		</form>

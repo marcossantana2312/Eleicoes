@@ -38,8 +38,7 @@
 		</header>
 			 <img class="mb-4" src="Resources/Images/Icon E.png" alt="" width="130" height="90">
 		<H3>Cadastrar Cargo</H3>
-		<c:out value="${eleicao.id_Eleicao}"></c:out>
-			<%out.print(request.getParameter("idEleicao")); %>
+		
 		
 		<form class="form-cadastro" action="<%request.getContextPath();%>/CadastrarCargoServlet"
 			method="post">

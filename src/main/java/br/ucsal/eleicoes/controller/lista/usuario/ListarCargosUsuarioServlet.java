@@ -23,6 +23,8 @@ public class ListarCargosUsuarioServlet extends HttpServlet {
 		Long id_Eleicao = Long.parseLong(request.getParameter("id_Eleicao"));
 		CargoDAO dao = new CargoDAO();
 		List<Cargo> cargos = dao.listar(id_Eleicao);
+
+		request.setAttribute("idEleicao1", id_Eleicao);
 		request.setAttribute("cargos", cargos);
 		RequestDispatcher rd = request.getRequestDispatcher("/ListasUsuario/listacargos.jsp");
 		rd.forward(request, response);

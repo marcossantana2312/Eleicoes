@@ -1,3 +1,4 @@
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -35,8 +36,14 @@
 				</nav>
 			</div>
 		</header>
-
+		<%List<Long> ids = (List<Long>) request.getAttribute("ids"); %>
 		<h1>Candidatos</h1>
+		<form action="../Cadastros/formcadastrocandidato.jsp">
+		<input type="hidden" value="<%out.print(ids.get(0));%>" name="idCargo">
+		<input type="hidden" value="<%out.print(ids.get(1));%>" name="idEleicao">
+		 <input type="submit" value="Adicionar Candidato" class="btn btn-lg btn-secondary" >
+		</form>
+		
 		<p class="lead">Clique em Detalhes para ver as informações do
 			candidato ou em Alterar para alterar ou remover o candidato</p>
 

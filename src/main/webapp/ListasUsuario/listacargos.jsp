@@ -3,6 +3,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <%@page import="br.ucsal.eleicoes.model.Usuario" %>
+<%@page import="br.ucsal.eleicoes.model.Cargo" %>
 <html>
 <head>
 <meta charset="utf-8">
@@ -35,9 +36,9 @@
 				</nav>
 			</div>
 		</header>
-	
+		
 		<h1>Cargos</h1>  <form action="../Cadastros/formcadastrocargo.jsp">
-		<input type="hidden" value="${cargo.id_Eleicao}" name="idEleicao">
+		<input type="hidden" value="<%out.print(request.getAttribute("idEleicao1")); %>" name="idEleicao">
 		 <input type="submit" value="Adicionar Cargo" class="btn btn-lg btn-secondary" >
 		</form>
       <p class="lead">Clique em Detalhes para ver os candidatos do cargo ou em Alterar para alterar ou remover o cargo</p>
@@ -50,6 +51,7 @@
         <div class="Detalhe">
         <form action="ListarCandidatosUsuarioServlet">
         <input type="hidden" name="id_Cargo" value="${cargo.id_Cargo}">
+         <input type="hidden" name="id_Eleicao" value="${cargo.id_Eleicao}">
         <input type="submit" value="Detalhes" class="btn btn-lg btn-secondary" >
         </form></div>
         <div class="Detalhe">

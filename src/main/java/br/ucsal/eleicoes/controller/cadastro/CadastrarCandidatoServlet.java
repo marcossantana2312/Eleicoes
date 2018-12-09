@@ -25,17 +25,25 @@ public class CadastrarCandidatoServlet extends HttpServlet {
 		Long numero = Long.parseLong(request.getParameter("numero"));
 		String proposta = request.getParameter("proposta");
 		String chapa = request.getParameter("chapa");
-		Long id_Eleicao = Long.parseLong(request.getParameter("idEleicao"));
-		Long id_Cargo = Long.parseLong(request.getParameter("idCargo"));
 		Long cadastrarMais = Long.parseLong(request.getParameter("cadastro"));
-
+		String id_Eleicao = request.getParameter("idEleicao");
+		String id_Cargo = request.getParameter("idCargo");
+		
+		if(!isLong(id_Eleicao, id_Cargo)) {
+			id_Eleicao = request.getParameter("idEleicao2");
+			id_Cargo = request.getParameter("idCargo2");
+		}
+		
+		Long idCargo = Long.parseLong(id_Cargo);
+		Long idEleicao = Long.parseLong(id_Eleicao);
+		
 		Candidato candidato = new Candidato();
 		candidato.setNome(nome);
 		candidato.setChapa(chapa);
 		candidato.setNumero(numero);
 		candidato.setProposta(proposta);
-		candidato.setId_Cargo(id_Cargo);
-		candidato.setId_Eleicao(id_Eleicao);
+		candidato.setId_Cargo(idCargo);
+		candidato.setId_Eleicao(idEleicao);
 
 		CandidatoDAO dao = new CandidatoDAO();
 		dao.adicionar(candidato);
@@ -44,12 +52,22 @@ public class CadastrarCandidatoServlet extends HttpServlet {
 			response.sendRedirect("iniciousuario.jsp");
 		} else {
 			Cargo cargo = new Cargo();
-			cargo.setId_Cargo(id_Cargo);
-			cargo.setId_Eleicao(id_Eleicao);
+			cargo.setId_Cargo(idCargo);
+			cargo.setId_Eleicao(idEleicao);
 			request.setAttribute("cargo", cargo);
 			RequestDispatcher rd = request.getRequestDispatcher("/Cadastros/formcadastrocandidato.jsp");
 			rd.forward(request, response);
 		}
+	}
+	public boolean isLong(String id_Eleicao, String id_Cargo) {
+		try {
+			Long.parseLong(id_Eleicao);
+			Long.parseLong(id_Cargo);
+			} catch (Exception e) {
+	
+			return false;
+		}
+		return true;
 	}
 
 }

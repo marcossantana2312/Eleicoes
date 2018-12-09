@@ -21,10 +21,10 @@ public class CadastrarCargoServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		System.out.println(request.getParameter("idEleicao1"));
-		System.out.println(request.getParameter("idEleicao2"));
+//		System.out.println(request.getParameter("idEleicao1"));
+//		System.out.println(request.getParameter("idEleicao2"));
 		String idEleicao = request.getParameter("idEleicao1");
-		if(idEleicao == null) {
+		if(!isLong(idEleicao)) {
 			System.out.println("EMTREI AQUI");
 			idEleicao = request.getParameter("idEleicao2");
 		}
@@ -53,5 +53,14 @@ public class CadastrarCargoServlet extends HttpServlet {
 			rd.forward(request, response);
 		}
 	}
-
+	
+	public boolean isLong(String idEleicao) {
+		try {
+			Long.parseLong(idEleicao);
+		} catch (Exception e) {
+	
+			return false;
+		}
+		return true;
+	}
 }
