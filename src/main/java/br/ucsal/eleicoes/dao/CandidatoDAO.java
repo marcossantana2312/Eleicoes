@@ -74,14 +74,14 @@ public class CandidatoDAO {
 	}
 
 	public void alterar(Candidato candidato) {
-		String sql = "Update cargo set nome=?, chapa=?, proposta=?, numero=?  where id_candidato=?";
+		String sql = "Update candidato set nome=?, chapa=?, proposta=?, numero=?  where id_candidato=?";
 		try {
 			PreparedStatement stmt = con.prepareStatement(sql);
 			stmt.setString(1, candidato.getNome());
 			stmt.setString(2, candidato.getChapa());
 			stmt.setString(3,candidato.getProposta());
 			stmt.setLong(4, candidato.getNumero());
-			stmt.setLong(3, candidato.getId_Candidato());
+			stmt.setLong(5, candidato.getId_Candidato());
 			stmt.execute();
 			stmt.close();
 		} catch (SQLException e) {
@@ -90,7 +90,7 @@ public class CandidatoDAO {
 	}
 
 	public void excluir(Candidato candidato) {
-		String sql = "Delete carndidato where id_candidato?";
+		String sql = "Delete from candidato where id_candidato=?";
 		try {
 			PreparedStatement stmt = con.prepareStatement(sql);
 			stmt.setLong(1, candidato.getId_Candidato());

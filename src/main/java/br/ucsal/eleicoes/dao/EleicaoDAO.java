@@ -84,10 +84,14 @@ public class EleicaoDAO {
 	}
 	
 	public void remover(Eleicao eleicao) {
-		String sql = "delete from eleicao where id_eleicao=?";
+		String sql = "delete from candidato where id_eleicao=?;"
+				+ "delete from cargo where id_eleicao=?;"
+				+ "delete from eleicao where id_eleicao=?";
 		try {
 			PreparedStatement stmt = con.prepareStatement(sql);
 			stmt.setLong(1, eleicao.getId_Eleicao());
+			stmt.setLong(2, eleicao.getId_Eleicao());
+			stmt.setLong(3, eleicao.getId_Eleicao());
 			stmt.execute();
 			stmt.close();
 		} catch (SQLException e) {

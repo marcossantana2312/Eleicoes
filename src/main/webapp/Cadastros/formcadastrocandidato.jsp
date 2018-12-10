@@ -14,7 +14,7 @@
 <link rel="icon" href="/Resources/Images/Icon E.png">
 
 
-<title>Cadastro Cargo</title>
+<title>Cadastro Candidato</title>
 </head>
 <body>
 

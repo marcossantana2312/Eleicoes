@@ -81,10 +81,12 @@ public class CargoDAO {
 	}
 	
 	public void excluir(Cargo cargo) {
-		String sql = "Delete cargo where id_cargo?";
+		String sql = "Delete from candidato where id_cargo=?;"
+				+ "Delete from cargo where id_cargo=?";
 		try {
 			PreparedStatement stmt = con.prepareStatement(sql);
 			stmt.setLong(1, cargo.getId_Cargo());
+			stmt.setLong(2, cargo.getId_Cargo());
 			stmt.execute();
 			stmt.close();
 		} catch (SQLException e) {

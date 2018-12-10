@@ -60,7 +60,7 @@
 					</form>
 				</div>
 				<div class="alterar">
-					<form action="<%request.getContextPath();%>/Alterar/alterarcandidato.jsp">
+					<form action="<%request.getContextPath();%>/Alterar/formalterarcandidato.jsp">
 						<input type="hidden" name="id_Candidato"
 							value="${candidato.id_Candidato}"> <input type="submit"
 							value="Alterar" class="btn btn-lg btn-secondary">

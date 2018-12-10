@@ -12,7 +12,7 @@
 <link rel="icon" href="/Resources/Images/Icon E.png">
 
 
-<title>Alterar Eleição</title>
+<title>Alterar Cargo</title>
 </head>
 <body>
 
@@ -36,22 +36,15 @@
 			</div>
 		</header>
 			 <img class="mb-4" src="Resources/Images/Icon E.png" alt="" width="130" height="90">
-		<H3>Alterar Eleição</H3>
-		<form class="form-cadastro" action="../AlterarEleicaoServlet"
+		<H3>Alterar Cargo</H3>
+	<form class="form-cadastro" action="<%request.getContextPath();%>/AlterarCargoServlet"
 			method="post">
 			Nome:<br> <input class="form-control" type="text" name="nome" placeholder="Nome" required><br>
-			Descrição:<br> <input class="form-control" type="text" name="descricao" placeholder="Descrição" required><br>
-			Data de Votação:<br> <input class="form-control" type="date" name="dataVotacao" required><br>
-			Método de votacão:<br>
-		<select name="metodo" class="form-control" required>
-			<option value = "Opcao 1"> Voto urna</option>
-			<option value = "Opcao 2"> Voto email</option>
-			<option value = "Opcao 3"> Sem carga de eleitores</option>
-		</select><br>
-			<input type="hidden" value="<%out.print(request.getParameter("id_Eleicao")); %>" name="id_Eleicao"/><br> 
-			<button class="btn btn-lg btn-secondary" type="submit">Alterar</button>
-		</form><form action="../ExcluirEleicaoServlet" method="POST">
-			<input type="hidden" value="<%out.print(request.getParameter("id_Eleicao")); %>" name="id_Eleicao"/>
+			Função:<br> <input class="form-control" type="text" name="funcao" placeholder="Função" required><br>
+			<input type="hidden" value="<%out.print(request.getParameter("id_Cargo"));%>" name="idCargo"/><br> 
+			<button class="btn btn-lg btn-secondary" type="submit" value="0" name="cadastro">Alterar Cargo</button>
+		</form><form action="<%request.getContextPath(); %>/ExcluirCargoServlet" method="POST">
+			<input type="hidden" value="<%out.print(request.getParameter("id_Cargo")); %>" name="idCargo"/>
 			<button class="btn btn-lg btn-secondary" type="submit">Excluir</button></form>
 
 

@@ -55,7 +55,7 @@
         <input type="submit" value="Detalhes" class="btn btn-lg btn-secondary" >
         </form></div>
         <div class="Detalhe">
-        <form action="alterarcargoservlet">
+        <form action="/Alterar/formalterarcargo.jsp">
         <input type="hidden" name="id_Cargo" value="${cargo.id_Cargo}">
         <input type="submit" value="Alterar" class="btn btn-lg btn-secondary" >
         </form></div>

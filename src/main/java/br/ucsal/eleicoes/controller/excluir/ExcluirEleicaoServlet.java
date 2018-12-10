@@ -25,7 +25,7 @@ public class ExcluirEleicaoServlet extends HttpServlet {
 		EleicaoDAO dao = new EleicaoDAO();
 		dao.remover(eleicao);
 		
-		response.sendRedirect("ListasUsuario/listareleicoes.jsp");
+		response.sendRedirect("/");
 	}
 
 }

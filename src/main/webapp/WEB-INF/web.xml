@@ -149,7 +149,7 @@
     <servlet-name>ExcluirEleicaoServlet</servlet-name>
     <url-pattern>/ExcluirEleicaoServlet</url-pattern>
   </servlet-mapping>
-    <servlet>
+  <servlet>
     <description></description>
     <display-name>ConsultaDadosServlet</display-name>
     <servlet-name>ConsultaDadosServlet</servlet-name>
@@ -159,4 +159,44 @@
     <servlet-name>ConsultaDadosServlet</servlet-name>
     <url-pattern>/ConsultaDadosServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ExcluirCargoServlet</display-name>
+    <servlet-name>ExcluirCargoServlet</servlet-name>
+    <servlet-class>br.ucsal.eleicoes.controller.excluir.ExcluirCargoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ExcluirCargoServlet</servlet-name>
+    <url-pattern>/ExcluirCargoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AlterarCargpServlet</display-name>
+    <servlet-name>AlterarCargoServlet</servlet-name>
+    <servlet-class>br.ucsal.eleicoes.controller.alterar.AlterarCargoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AlterarCargoServlet</servlet-name>
+    <url-pattern>/AlterarCargoServlet</url-pattern>
+  </servlet-mapping>
+     <servlet>
+    <description></description>
+    <display-name>AlterarCandidatoServlet</display-name>
+    <servlet-name>AlterarCandidatoServlet</servlet-name>
+    <servlet-class>br.ucsal.eleicoes.controller.alterar.AlterarCandidatoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AlterarCandidatoServlet</servlet-name>
+    <url-pattern>/AlterarCandidatoServlet</url-pattern>
+  </servlet-mapping>
+      <servlet>
+    <description></description>
+    <display-name>ExcluirCandidatoServlet</display-name>
+    <servlet-name>ExcluirCandidatoServlet</servlet-name>
+    <servlet-class>br.ucsal.eleicoes.controller.excluir.ExcluirCandidatoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ExcluirCandidatoServlet</servlet-name>
+    <url-pattern>/ExcluirCandidatoServlet</url-pattern>
+  </servlet-mapping> 
 </web-app>

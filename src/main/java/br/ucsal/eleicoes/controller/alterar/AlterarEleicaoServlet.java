@@ -31,6 +31,7 @@ public class AlterarEleicaoServlet extends HttpServlet {
 		
 		EleicaoDAO dao = new EleicaoDAO();
 		dao.alterar(eleicao);
+		response.sendRedirect("/");
 		
 	}
 
